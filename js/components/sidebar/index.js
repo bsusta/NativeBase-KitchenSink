@@ -16,8 +16,29 @@ const drawerImage = require('../../../img/logo-kitchen-sink.png');
 
 const datas = [
   {
-    name: 'Filter 1',
+    name: 'DO IT',
     route: 'filter',
+    icon: 'ios-color-filter-outline',
+    bg: '#477EEA',
+    types: '8',
+  },
+  {
+    name: 'IMPORTANT',
+    route: 'folder',
+    icon: 'ios-color-filter-outline',
+    bg: '#477EEA',
+    types: '8',
+  },
+  {
+    name: 'SCHEDULED',
+    route: 'folder',
+    icon: 'ios-color-filter-outline',
+    bg: '#477EEA',
+    types: '8',
+  },
+  {
+    name: 'REQUESTED',
+    route: 'folder',
     icon: 'ios-color-filter-outline',
     bg: '#477EEA',
     types: '8',
@@ -30,154 +51,14 @@ const datas = [
     types: '8',
   },
   {
-    name: 'FOLDER',
-    route: 'addFolder',
-    icon: 'md-add',
-    bg: '#C5F442',
-  },
-  {
-    name: 'Anatomy',
-    route: 'anatomy',
-    icon: 'phone-portrait',
-    bg: '#C5F442',
-  },
-  {
-    name: 'Header',
-    route: 'header',
-    icon: 'phone-portrait',
+    name: 'Folder 2',
+    route: 'folder',
+    icon: 'folder',
     bg: '#477EEA',
     types: '8',
   },
-  {
-    name: 'Footer',
-    route: 'footer',
-    icon: 'phone-portrait',
-    bg: '#DA4437',
-    types: '4',
-  },
-  {
-    name: 'Badge',
-    route: 'badge',
-    icon: 'notifications',
-    bg: '#4DCAE0',
-  },
-  {
-    name: 'Button',
-    route: 'button',
-    icon: 'radio-button-off',
-    bg: '#1EBC7C',
-    types: '9',
-  },
-  {
-    name: 'Card',
-    route: 'card',
-    icon: 'keypad',
-    bg: '#B89EF5',
-    types: '5',
-  },
-  {
-    name: 'Check Box',
-    route: 'checkbox',
-    icon: 'checkmark-circle',
-    bg: '#EB6B23',
-  },
-  {
-    name: 'Deck Swiper',
-    route: 'deckswiper',
-    icon: 'swap',
-    bg: '#3591FA',
-  },
-  {
-    name: 'Fab',
-    route: 'fab',
-    icon: 'help-buoy',
-    bg: '#EF6092',
-    types: '2',
-  },
-  {
-    name: 'Form & Inputs',
-    route: 'form',
-    icon: 'call',
-    bg: '#EFB406',
-    types: '13',
-  },
-  {
-    name: 'Icon',
-    route: 'icon',
-    icon: 'information-circle',
-    bg: '#EF6092',
-  },
-  {
-    name: 'Layout',
-    route: 'layout',
-    icon: 'grid',
-    bg: '#9F897C',
-    types: '5',
-  },
-  {
-    name: 'List',
-    route: 'list',
-    icon: 'lock',
-    bg: '#5DCEE2',
-    types: '7',
-  },
-  {
-    name: 'Picker',
-    route: 'picker',
-    icon: 'arrow-dropdown',
-    bg: '#F50C75',
-  },
-  {
-    name: 'Radio',
-    route: 'radio',
-    icon: 'radio-button-on',
-    bg: '#6FEA90',
-  },
-  {
-    name: 'SearchBar',
-    route: 'searchbar',
-    icon: 'search',
-    bg: '#29783B',
-  },
-  {
-    name: 'Segment',
-    route: 'segment',
-    icon: 'menu',
-    bg: '#AB6AED',
-  },
-  {
-    name: 'Spinner',
-    route: 'spinner',
-    icon: 'navigate',
-    bg: '#BE6F50',
-  },
-  {
-    name: 'Tabs',
-    route: 'tab',
-    icon: 'home',
-    bg: '#AB6AED',
-    types: '2',
-  },
-  {
-    name: 'Thumbnail',
-    route: 'thumbnail',
-    icon: 'image',
-    bg: '#cc0000',
-  },
-  {
-    name: 'Toast',
-    route: 'toast',
-    icon: 'albums',
-    bg: '#C5F442',
-  },
-  {
-    name: 'Typography',
-    route: 'typography',
-    icon: 'paper',
-    bg: '#48525D',
-  },
-
 ];
+
 class SideBar extends Component {
 
   static propTypes = {
@@ -225,7 +106,6 @@ class SideBar extends Component {
                 }
               </ListItem>}
           />
-
         </Content>
       </Container>
     );

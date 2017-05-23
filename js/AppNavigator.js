@@ -99,6 +99,7 @@ import Toast from './components/toast';
 import statusBarColor from './themes/variables';
 
 import TaskList from './components/taskList/';
+import TaskEdit from './components/taskEdit/';
 
 const {
   popRoute,
@@ -176,6 +177,7 @@ class AppNavigator extends Component {
             <Scene key="root">
               <Scene key="home" component={Home} hideNavBar initial={true} />
               <Scene key="taskList" component={TaskList} />
+              <Scene key="taskEdit" component={TaskEdit} />
               <Scene key="header" component={Header} />
               <Scene key="header1" component={Header1} />
               <Scene key="header2" component={Header2} />

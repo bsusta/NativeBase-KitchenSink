@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem } from 'native-base';
+import { Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
@@ -52,25 +52,39 @@ class TaskList extends Component {
         </Header>
 
         <Content>
-          <List
-            dataArray={datas} renderRow={data =>
-              <ListItem button onPress={() => { Actions[data.route](); this.props.closeDrawer() }} >
+          <List dataArray={datas} renderRow={data =>
+            <ListItem button onPress={() => { Actions[data.route](); this.props.closeDrawer() }} >
               <Body>
                 <Text>{data.text}</Text>
                 <Text numberOfLines={1} note>
-                  <Icon name="folder"/>
-                  Folder 1
+                  Folder: Folder 1
                 </Text>
-                <Text numberOfLines={1} note>Branislav Susta</Text>
-                <Text numberOfLines={1} note>9:00 27.5.2017</Text>
-               </Body>
-                <Right>
-                  <Icon name="arrow-forward" />
-                </Right>
-              </ListItem>
+                <Text numberOfLines={1} note>Assigned: Branislav Susta</Text>
+                <Text numberOfLines={1} note>Deadline: 9:00 27.5.2017</Text>
+              </Body>
+              <Right>
+                <Icon name="arrow-forward" />
+              </Right>
+            </ListItem>
           }
           />
         </Content>
+
+        <Footer>
+          <FooterTab>
+            <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+              <Icon active style={{ color: 'white' }} name="md-add" />
+              <Text style={{ color: 'white' }} >Folder</Text>
+            </Button>
+          </FooterTab>
+
+          <FooterTab>
+            <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+              <Icon active name="md-add" style={{ color: 'white' }} />
+              <Text style={{ color: 'white' }} >Task</Text>
+            </Button>
+          </FooterTab>
+        </Footer>
       </Container>
     );
   }
