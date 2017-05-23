@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Container, Content, Icon, Input, Item, Label, Text, Footer, FooterTab, Button, Picker } from 'native-base';
+import { Card, CardItem, Body, Container, Content, Icon, Input, Item, Label, Text, Footer, FooterTab, Button, Picker } from 'native-base';
 
 import styles from './styles';
 
@@ -42,17 +42,80 @@ export default class TabAtributes extends Component { // eslint-disable-line
           <Label>Add work time</Label>
           <Input />
         </Item>
+
+<Text>Status</Text>
         <Picker
                   supportedOrientations={['portrait','landscape']}
                   iosHeader="Select one"
                   mode="dropdown"
                   selectedValue={this.state.selected1}
                   onValueChange={this.onValueChange.bind(this)}>
-                  <Item label="Wallet" value="key0" />
-                  <Item label="ATM Card" value="key1" />
-                  <Item label="Credit Card" value="key2" />
-                  <Item label="Debit Card" value="key3" />
+                  <Item label="New" value="key0" />
+                  <Item label="Solved" value="key1" />
+                  <Item label="Pending" value="key2" />
+                  <Item label="Closed" value="key3" />
              </Picker>
+          <Text>Project</Text>
+             <Picker
+                       supportedOrientations={['portrait','landscape']}
+                       iosHeader="Select one"
+                       mode="dropdown"
+                       selectedValue={this.state.selected1}
+                       onValueChange={this.onValueChange.bind(this)}>
+                       <Item label="New" value="key0" />
+                       <Item label="Solved" value="key1" />
+                       <Item label="Pending" value="key2" />
+                       <Item label="Closed" value="key3" />
+                  </Picker>
+            <Text>Requester</Text>
+                  <Picker
+                            supportedOrientations={['portrait','landscape']}
+                            iosHeader="Select one"
+                            mode="dropdown"
+                            selectedValue={this.state.selected1}
+                            onValueChange={this.onValueChange.bind(this)}>
+                            <Item label="New" value="key0" />
+                            <Item label="Solved" value="key1" />
+                            <Item label="Pending" value="key2" />
+                            <Item label="Closed" value="key3" />
+                       </Picker>
+              <Text>Company</Text>
+                       <Picker
+                                 supportedOrientations={['portrait','landscape']}
+                                 iosHeader="Select one"
+                                 mode="dropdown"
+                                 selectedValue={this.state.selected1}
+                                 onValueChange={this.onValueChange.bind(this)}>
+                                 <Item label="New" value="key0" />
+                                 <Item label="Solved" value="key1" />
+                                 <Item label="Pending" value="key2" />
+                                 <Item label="Closed" value="key3" />
+                            </Picker>
+
+            <Text>Assigned</Text>
+
+    <Picker
+              supportedOrientations={['portrait','landscape']}
+              iosHeader="Select one"
+              mode="dropdown"
+              selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)}>
+              <Item label="New" value="key0" />
+              <Item label="Solved" value="key1" />
+              <Item label="Pending" value="key2" />
+              <Item label="Closed" value="key3" />
+         </Picker>
+
+
+
+
+
+
+
+
+
+
+
     </Content>
 
 
@@ -60,14 +123,14 @@ export default class TabAtributes extends Component { // eslint-disable-line
         <FooterTab>
           <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
             <Icon active style={{ color: 'white' }} name="md-add" />
-            <Text style={{ color: 'white' }} >Folder</Text>
+            <Text style={{ color: 'white' }} >Cancel</Text>
           </Button>
         </FooterTab>
 
         <FooterTab>
           <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
             <Icon active name="md-add" style={{ color: 'white' }} />
-            <Text style={{ color: 'white' }} >Task</Text>
+            <Text style={{ color: 'white' }} >Save</Text>
           </Button>
         </FooterTab>
       </Footer>

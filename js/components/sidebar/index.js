@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Image, Platform } from 'react-native';
 import { connect } from 'react-redux';
-import { Content, Text, List, ListItem, Icon, Container, Left, Right, Badge, Button, View, StyleProvider, getTheme, variables } from 'native-base';
+import { H1, Content, Text, List, ListItem, Icon, Container, Left, Right, Badge, Button, View, StyleProvider, getTheme, variables } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 import material from '../../../native-base-theme/variables/material';
@@ -83,11 +83,12 @@ class SideBar extends Component {
   render() {
     return (
       <Container>
+
         <Content
           bounces={false}
           style={{ flex: 1, backgroundColor: '#fff', top: -1 }}
         >
-
+          <H1 style={{ margin: 15, color: 'white', backgroundColor: 'blue', padding: 10, }} >LanHelpdesk App</H1>
           <List
             dataArray={datas} renderRow={data =>
               <ListItem button noBorder onPress={() => { Actions[data.route](); this.props.closeDrawer() }} >
