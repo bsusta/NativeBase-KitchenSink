@@ -33,8 +33,8 @@ class Search extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="menu" />
+            <Button transparent onPress={() => Actions.pop()}>
+              <Icon name="arrow-back" />
             </Button>
           </Left>
           <Body>
