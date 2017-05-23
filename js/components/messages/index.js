@@ -8,6 +8,13 @@ import { Actions } from 'react-native-router-flux';
 import { openDrawer, closeDrawer } from '../../actions/drawer';
 import styles from './styles';
 
+const fakeData =[
+  {date:"22.5.2017 16:00",messageHeader:"About",message:"Message about something"},
+  {date:"23.5.2017 16:00",messageHeader:"About 2",message:"Message about something other"},
+  {date:"24.5.2017 16:00",messageHeader:"About 3",message:"Message about something other other"},
+  {date:"25.5.2017 16:00",messageHeader:"About 4",message:"Message about something other other other"},
+]
+
 const {
   pushRoute,
 } = actions;
@@ -23,7 +30,10 @@ const datas = [
 ];
 
 class Messages extends Component {
-
+  constructor(props){
+    super(props);
+    this.state={messages:fakeData};
+  }
   static propTypes = {
     openDrawer: React.PropTypes.func,
     pushRoute: React.PropTypes.func,
@@ -53,6 +63,12 @@ class Messages extends Component {
         </Header>
 
         <Content>
+
+        {
+          this.state.messages.map((message)=>{
+          return <View style={styles.textBox}><Text style={{fontWeight: 'bold'}}>{message.date}{"\n"}</Text><Text>{message.message}</Text></View>
+        })
+      }
         </Content>
 
         <Footer>
