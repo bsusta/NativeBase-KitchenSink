@@ -14,11 +14,4 @@ export default {
   mb: {
     marginBottom: 15,
   },
-  textBox: {
-    margin:15,
-    padding:5,
-    borderBottomColor: '#000',
-    borderBottomWidth: 2,
-  },
-
 };
