@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Container, Content, Icon, Input, Item, Label, Text, Footer, FooterTab, Button, Picker } from 'native-base';
+import { Container, Content,ListItem, Icon, Input,Left,Body, Item, Label, View, Text, Footer, FooterTab, Button, Picker } from 'native-base';
 
 import styles from './styles';
 
@@ -25,34 +25,50 @@ export default class TabAtributes extends Component { // eslint-disable-line
   render() { // eslint-disable-line
     return (
       <Container>
-      <Content>
+      <Content style={styles.containerStyle}>
+        <ListItem icon>
+          <Left>
+              <Icon name="plane" />
+          </Left>
+          <Body>
+            <Item stackedLabel>
+              <Label>Task name</Label>
+              <Input style={styles.input} />
+            </Item>
+          </Body>
+        </ListItem>
+
         <Item stackedLabel>
           <Label>Task name</Label>
-          <Input />
+          <Input style={styles.input} />
         </Item>
+
         <Item stackedLabel>
           <Label>Task description</Label>
-          <Input />
+          <Input style={styles.input} />
         </Item>
         <Item stackedLabel>
           <Label>Work done</Label>
-          <Input />
+          <Input style={styles.input} />
         </Item>
         <Item stackedLabel>
           <Label>Add work time</Label>
-          <Input />
+          <Input style={styles.input} />
         </Item>
-        <Picker
-                  supportedOrientations={['portrait','landscape']}
-                  iosHeader="Select one"
-                  mode="dropdown"
-                  selectedValue={this.state.selected1}
-                  onValueChange={this.onValueChange.bind(this)}>
-                  <Item label="Wallet" value="key0" />
-                  <Item label="ATM Card" value="key1" />
-                  <Item label="Credit Card" value="key2" />
-                  <Item label="Debit Card" value="key3" />
-             </Picker>
+        <View style={styles.inputView}>
+          <Picker
+            supportedOrientations={['portrait','landscape']}
+            iosHeader="Select one"
+            mode="dropdown"
+            selectedValue={this.state.selected1}
+            onValueChange={this.onValueChange.bind(this)}>
+            <Item label="Wallet" value="key0" />
+            <Item label="ATM Card" value="key1" />
+            <Item label="Credit Card" value="key2" />
+            <Item label="Debit Card" value="key3" />
+           </Picker>
+          </View>
+
     </Content>
 
 
