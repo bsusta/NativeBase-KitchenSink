@@ -100,6 +100,9 @@ import statusBarColor from './themes/variables';
 
 import TaskList from './components/taskList/';
 import TaskEdit from './components/taskEdit/';
+import Search from './components/search/';
+import Settings from './components/settings/';
+import Messages from './components/messages/';
 
 const {
   popRoute,
@@ -178,6 +181,9 @@ class AppNavigator extends Component {
               <Scene key="home" component={Home} hideNavBar initial={true} />
               <Scene key="taskList" component={TaskList} />
               <Scene key="taskEdit" component={TaskEdit} />
+              <Scene key="search" component={Search} />
+              <Scene key="messages" component={Messages} />
+              <Scene key="settings" component={Settings} />
               <Scene key="header" component={Header} />
               <Scene key="header1" component={Header1} />
               <Scene key="header2" component={Header2} />

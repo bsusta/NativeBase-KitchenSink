@@ -48,7 +48,19 @@ class TaskList extends Component {
           <Body>
             <Title>Filter/Folder name</Title>
           </Body>
-          <Right />
+          <Right>
+            <Button transparent style={{ margin: 10 }} onPress={Actions.search}>
+              <Icon name="search" style={{ color: 'white' }} />
+            </Button>
+
+            <Button transparent style={{ margin: 10 }} onPress={Actions.messages}>
+              <Icon name="mail" style={{ color: 'white' }} />
+            </Button>
+
+            <Button transparent style={{ margin: 10 }} onPress={Actions.settings}>
+              <Icon name="settings" style={{ color: 'white' }} />
+            </Button>
+          </Right>
         </Header>
 
         <Content>
