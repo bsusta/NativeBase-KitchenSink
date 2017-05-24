@@ -1,37 +1,72 @@
 
 import React, { Component } from 'react';
 
-import { Container, Content, Card, CardItem, Text, Body } from 'native-base';
+import { Container, Content, Card, CardItem, Text, Body, Footer, View,Input,Button } from 'native-base';
 
 import styles from './styles';
+const mockData=[
+  {name:'John',comment:'Needs update',date:'16.4.2017'},
+  {name:'Clara',comment:'Is should be up to date',date:'17.4.2017'},
+  {name:'John',comment:'Thanks',date:'17.4.2017'}
+]
 
 export default class TabComments extends Component { // eslint-disable-line
+  constructor(props){
+      super(props);
 
+      this.state = {
+          inputText:'',
+          canSubmit:false,
+          commentData:[],
+      }
+      this.updateComments.bind(this);
+  }
+  updateComments(data){
+    this.setState({
+      commentData: this.state.commentData.concat(data)
+    });
+  }
+
+  componentDidMount(){
+    this.updateComments(mockData);
+  }
+
+  updateInput(input){
+    this.setState({
+      inputText:input,
+      canSubmit:input!=''
+    });
+  }
+
+  submitComment(){
+    if(this.state.canSubmit){
+      this.updateComments([{name:'novyKomentator',comment:this.state.inputText,date:'Aktualny Datum'}]);
+      this.setState({inputText:''})
+    }
+  }
   render() { // eslint-disable-line
     return (
-      <Content padder style={{ marginTop: 0 }}>
-        <Card style={{ flex: 0 }}>
-          <CardItem>
-            <Body>
-              <Text>
-                NativeBase is a free and open source framework that enables
-                developers to build high-quality mobile apps using React Native
-                iOS and Android apps with a fusion of ES6.
-              </Text>
-            </Body>
-          </CardItem>
-        </Card>
-        <Card style={{ flex: 0 }}>
-          <CardItem>
-            <Body>
-              <Text>
-                NativeBase gives you the potential of building applications
-                that run on iOS and Android using a single codebase.
-              </Text>
-            </Body>
-          </CardItem>
-        </Card>
-      </Content>
+      <Container>
+        <Content padder style={{ marginTop: 0 }}>
+
+        {
+          this.state.commentData.map((comment,index)=>{
+            return <Card style={{ flex: 1 }} key={index}>
+                  <CardItem key={index}>
+                    <Body>
+                      <Text style={styles.commentInfo}>{comment.name} {comment.date}</Text>
+                      <Text>{comment.comment}</Text>
+                    </Body>
+                  </CardItem>
+                </Card>
+
+          })
+        }
+        </Content>
+        <Footer style={{backgroundColor: 'white'}}>
+        <Input style={styles.commentInput} placeholder="Comment here" onSubmitEditing={() => this.submitComment()} />
+        </Footer>
+      </Container>
     );
   }
 }

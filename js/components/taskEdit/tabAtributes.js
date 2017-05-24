@@ -26,36 +26,49 @@ export default class TabAtributes extends Component { // eslint-disable-line
     return (
       <Container>
       <Content style={styles.containerStyle}>
-        <ListItem icon>
+        <ListItem icon style={{height:60,}}>
           <Left>
               <Icon name="plane" />
           </Left>
-          <Body>
-            <Item stackedLabel>
-              <Label>Task name</Label>
+          <Body style={{height:60,}}>
+              <Label style={styles.label}>Task name</Label>
               <Input style={styles.input} />
-            </Item>
           </Body>
         </ListItem>
 
-        <Item stackedLabel>
-          <Label>Task name</Label>
-          <Input style={styles.input} />
-        </Item>
+        <ListItem icon style={{height:60,}}>
+          <Left>
+              <Icon name="plane" />
+          </Left>
+          <Body style={{height:60,}}>
+              <Label style={styles.label}>Task description</Label>
+              <Input style={styles.input} />
+          </Body>
+        </ListItem>
+        <ListItem icon style={{height:60,}}>
+          <Left>
+              <Icon name="plane" />
+          </Left>
+          <Body style={{height:60,}}>
+              <Label style={styles.label}>Work done</Label>
+              <Input style={styles.input} />
+          </Body>
+        </ListItem>
+        <ListItem icon style={{height:60,}}>
+          <Left>
+              <Icon name="plane" />
+          </Left>
+          <Body style={{height:60,}}>
+              <Label style={styles.label}>Add work time</Label>
+              <Input style={styles.input} />
+          </Body>
+        </ListItem>
 
-        <Item stackedLabel>
-          <Label>Task description</Label>
-          <Input style={styles.input} />
-        </Item>
-        <Item stackedLabel>
-          <Label>Work done</Label>
-          <Input style={styles.input} />
-        </Item>
-        <Item stackedLabel>
-          <Label>Add work time</Label>
-          <Input style={styles.input} />
-        </Item>
-        <View style={styles.inputView}>
+        <ListItem icon style={{marginTop:10,}}>
+          <Left>
+              <Icon name="plane" />
+          </Left>
+          <Body style={styles.inputView}>
           <Picker
             supportedOrientations={['portrait','landscape']}
             iosHeader="Select one"
@@ -67,7 +80,8 @@ export default class TabAtributes extends Component { // eslint-disable-line
             <Item label="Credit Card" value="key2" />
             <Item label="Debit Card" value="key3" />
            </Picker>
-          </View>
+          </Body>
+        </ListItem>
 
     </Content>
 

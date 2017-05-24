@@ -14,4 +14,10 @@ export default {
   mb: {
     marginBottom: 15,
   },
+  inputView:{
+    padding:0,
+    borderColor: '#000',
+    borderWidth: 1,
+    flex:1,
+  },
 };
