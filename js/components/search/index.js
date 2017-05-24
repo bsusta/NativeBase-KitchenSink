@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
+import { Input, Picker, Item, Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
@@ -28,6 +28,22 @@ class Search extends Component {
     this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+        selectedItem: undefined,
+        selected1: 'key0',
+        results: {
+            items: []
+        }
+    }
+}
+onValueChange (value: string) {
+    this.setState({
+        selected1 : value
+    });
+}
+
   render() {
     return (
       <Container style={styles.container}>
@@ -40,17 +56,36 @@ class Search extends Component {
           <Body>
             <Title>Search</Title>
           </Body>
-          <Right>
-         </Right>
         </Header>
-
         <Content>
-        </Content>
+          <ListItem>
+            <Item rounded>
+              <Icon name="ios-search" />
+              <Input placeholder="Search" />
+              <Icon name="ios-people" />
+            </Item>
+          </ListItem>
+          <ListItem>
+            <Body>
+              <Picker
+                supportedOrientations={['portrait', 'landscape']}
+                iosHeader="Select one"
+                mode="dropdown"
+                selectedValue={this.state.selected1}
+                onValueChange={this.onValueChange.bind(this)}>
+                <Item label="Task name" value="key0" />
+                <Item label="Task description" value="key1" />
+                <Item label="Company" value="key2" />
+                <Item label="Status" value="key3" />
+              </Picker>
+            </Body>
+          </ListItem>
 
-        <Footer>
-          <FooterTab>
-          </FooterTab>
-        </Footer>
+          <Button primary block style={{ margin: 15 }}>
+            <Text>Search</Text>
+          </Button>
+
+        </Content>
       </Container>
     );
   }

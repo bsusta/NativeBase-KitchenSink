@@ -51,8 +51,42 @@ class Settings extends Component {
           <Right>
          </Right>
         </Header>
-
         <Content>
+        <ListItem icon>
+                      <Left>
+                          <Icon name="person" />
+                      </Left>
+                      <Body>
+                        <Text>Users</Text>
+                      </Body>
+                      <Right>
+                        <Icon name="arrow-forward" />
+                      </Right>
+            </ListItem>
+            <ListItem icon>
+                          <Left>
+                              <Icon name="people" />
+                          </Left>
+                          <Body>
+                            <Text>Companies</Text>
+                          </Body>
+                          <Right>
+                            <Icon name="arrow-forward" />
+                          </Right>
+                </ListItem>
+                <ListItem icon>
+                              <Left>
+                                  <Icon name="exit" />
+                              </Left>
+                              <Body>
+                                <Text>Log out</Text>
+                              </Body>
+                              <Right>
+                                <Icon name="arrow-forward" />
+                              </Right>
+                    </ListItem>
+
+
         </Content>
 
         <Footer>

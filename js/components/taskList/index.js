@@ -49,15 +49,15 @@ class TaskList extends Component {
             <Title>Filter/Folder name</Title>
           </Body>
           <Right>
-            <Button transparent style={{ margin: 10 }} onPress={Actions.search}>
+            <Button transparent style={{ marginTop: 8 }} onPress={Actions.search}>
               <Icon name="search" style={{ color: 'white' }} />
             </Button>
 
-            <Button transparent style={{ margin: 10 }} onPress={Actions.messages}>
+            <Button transparent style={{ marginTop: 8 }} onPress={Actions.messages}>
               <Icon name="mail" style={{ color: 'white' }} />
             </Button>
 
-            <Button transparent style={{ margin: 10 }} onPress={Actions.settings}>
+            <Button transparent style={{ marginTop: 8 }} onPress={Actions.settings}>
               <Icon name="settings" style={{ color: 'white' }} />
             </Button>
           </Right>

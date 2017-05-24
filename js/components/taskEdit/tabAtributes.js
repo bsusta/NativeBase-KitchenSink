@@ -55,23 +55,6 @@ export default class TabAtributes extends Component { // eslint-disable-line
              </Picker>
     </Content>
 
-
-      <Footer>
-        <FooterTab>
-          <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
-            <Icon active style={{ color: 'white' }} name="md-add" />
-            <Text style={{ color: 'white' }} >Folder</Text>
-          </Button>
-        </FooterTab>
-
-        <FooterTab>
-          <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
-            <Icon active name="md-add" style={{ color: 'white' }} />
-            <Text style={{ color: 'white' }} >Task</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
-
     </Container>
 
 
