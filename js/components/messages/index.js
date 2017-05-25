@@ -11,16 +11,7 @@ import styles from './styles';
 const {
   pushRoute,
 } = actions;
-const datas = [
-  {
-    route: 'taskEdit',
-    text: 'Task name 1',
-  },
-  {
-    route: 'taskEdit',
-    text: 'Task name 2',
-  },
-];
+
 
 class Messages extends Component {
 
@@ -38,28 +29,38 @@ class Messages extends Component {
 
   render() {
     return (
-      <Container style={styles.container}>
-        <Header>
-          <Left>
-            <Button transparent onPress={() => Actions.pop()}>
-              <Icon name="arrow-back" />
-            </Button>
-          </Left>
-          <Body>
+        <Container style={styles.container}>
+          <Header>
+            <Left>
+              <Button transparent onPress={() => Actions.pop()}>
+                <Icon name="arrow-back" />
+              </Button>
+            </Left>
+            <Body>
             <Title>Messages</Title>
-          </Body>
-          <Right>
-         </Right>
-        </Header>
+            </Body>
+            <Right>
+            </Right>
+          </Header>
 
-        <Content>
-        </Content>
+          <Content>
+            <List>
+            <ListItem>
+                   <Body>
+                       <Text>System message</Text>
+                   </Body>
+                   <Right>
+                       <Text note>3:43 pm 12.2.2017</Text>
+                   </Right>
+               </ListItem>
+          </List>
+          </Content>
 
-        <Footer>
-          <FooterTab>
-          </FooterTab>
-        </Footer>
-      </Container>
+          <Footer>
+            <FooterTab>
+            </FooterTab>
+          </Footer>
+        </Container>
     );
   }
 }

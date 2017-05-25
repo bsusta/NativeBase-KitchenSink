@@ -64,7 +64,7 @@ class TaskList extends Component {
         </Header>
 
         <Content>
-          <List  bordered dataArray={datas} renderRow={data =>
+          <List dataArray={datas} renderRow={data =>
             <ListItem button onPress={() => { Actions[data.route](); this.props.closeDrawer() }} >
               <Body>
                 <Text>{data.text}</Text>

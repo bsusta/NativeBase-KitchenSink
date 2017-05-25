@@ -56,6 +56,24 @@ onValueChange (value: string) {
           </Body>
         </Header>
         <Content>
+          <List>
+                    <ListItem >
+                      <Body>
+                        <Text>Company 1</Text>
+                      </Body>
+                      <Right>
+                        <Icon name="arrow-forward" />
+                      </Right>
+                    </ListItem>
+                    <ListItem>
+                      <Body>
+                        <Text>Company 2</Text>
+                      </Body>
+                      <Right>
+                        <Icon name="arrow-forward" />
+                      </Right>
+                    </ListItem>
+                </List>
         </Content>
         <Footer>
           <FooterTab>

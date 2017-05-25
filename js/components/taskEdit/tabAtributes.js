@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Card, CardItem, Body, Container, Content, Icon, Input, Item, Label, Text, Footer, FooterTab, Button, Picker } from 'native-base';
+import { View, Card, CardItem, Body, Container, Content, Icon, Input, Item, Label, Text, Footer, FooterTab, Button, Picker } from 'native-base';
 
 import styles from './styles';
 
@@ -25,98 +25,68 @@ export default class TabAtributes extends Component { // eslint-disable-line
   render() { // eslint-disable-line
     return (
       <Container>
-      <Content>
-        <Item stackedLabel>
-          <Label>Task name</Label>
-          <Input />
-        </Item>
-        <Item stackedLabel>
-          <Label>Task description</Label>
-          <Input />
-        </Item>
-        <Item stackedLabel>
-          <Label>Work done</Label>
-          <Input />
-        </Item>
-        <Item stackedLabel>
-          <Label>Add work time</Label>
-          <Input />
-        </Item>
-
-<Text>Status</Text>
-        <Picker
-                  supportedOrientations={['portrait','landscape']}
-                  iosHeader="Select one"
-                  mode="dropdown"
-                  selectedValue={this.state.selected1}
-                  onValueChange={this.onValueChange.bind(this)}>
-                  <Item label="New" value="key0" />
-                  <Item label="Solved" value="key1" />
-                  <Item label="Pending" value="key2" />
-                  <Item label="Closed" value="key3" />
-             </Picker>
-          <Text>Project</Text>
-             <Picker
-                       supportedOrientations={['portrait','landscape']}
-                       iosHeader="Select one"
-                       mode="dropdown"
-                       selectedValue={this.state.selected1}
-                       onValueChange={this.onValueChange.bind(this)}>
-                       <Item label="New" value="key0" />
-                       <Item label="Solved" value="key1" />
-                       <Item label="Pending" value="key2" />
-                       <Item label="Closed" value="key3" />
-                  </Picker>
-            <Text>Requester</Text>
-                  <Picker
-                            supportedOrientations={['portrait','landscape']}
-                            iosHeader="Select one"
-                            mode="dropdown"
-                            selectedValue={this.state.selected1}
-                            onValueChange={this.onValueChange.bind(this)}>
-                            <Item label="New" value="key0" />
-                            <Item label="Solved" value="key1" />
-                            <Item label="Pending" value="key2" />
-                            <Item label="Closed" value="key3" />
-                       </Picker>
-              <Text>Company</Text>
-                       <Picker
-                                 supportedOrientations={['portrait','landscape']}
-                                 iosHeader="Select one"
-                                 mode="dropdown"
-                                 selectedValue={this.state.selected1}
-                                 onValueChange={this.onValueChange.bind(this)}>
-                                 <Item label="New" value="key0" />
-                                 <Item label="Solved" value="key1" />
-                                 <Item label="Pending" value="key2" />
-                                 <Item label="Closed" value="key3" />
-                            </Picker>
-
-            <Text>Assigned</Text>
-
-    <Picker
-              supportedOrientations={['portrait','landscape']}
+        <Content style={{ padding: 15 }}>
+          <Text note> Task Name</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Input />
+          </View>
+          <Text note>Descrition</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Input />
+          </View>
+          <Text note>Work hours</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Input />
+          </View>
+          <Text note>Status</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Picker
+              supportedOrientations={['portrait', 'landscape']}
               iosHeader="Select one"
               mode="dropdown"
               selectedValue={this.state.selected1}
               onValueChange={this.onValueChange.bind(this)}>
               <Item label="New" value="key0" />
-              <Item label="Solved" value="key1" />
-              <Item label="Pending" value="key2" />
-              <Item label="Closed" value="key3" />
-         </Picker>
-
-
-
-
-
-
-
-
-
-
-
-    </Content>
+              <Item label="Company 2" value="key1" />
+            </Picker>
+          </View>
+          <Text note>Requester</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Picker
+              supportedOrientations={['portrait', 'landscape']}
+              iosHeader="Select one"
+              mode="dropdown"
+              selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)}>
+              <Item label="user 1" value="key0" />
+              <Item label="Company 2" value="key1" />
+            </Picker>
+          </View>
+          <Text note>Company</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Picker
+              supportedOrientations={['portrait', 'landscape']}
+              iosHeader="Select one"
+              mode="dropdown"
+              selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)}>
+              <Item label="Company 1" value="key0" />
+              <Item label="Company 2" value="key1" />
+            </Picker>
+          </View>
+          <Text note>Assigned</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Picker
+              supportedOrientations={['portrait', 'landscape']}
+              iosHeader="Select one"
+              mode="dropdown"
+              selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)}>
+              <Item label="User 2" value="key0" />
+              <Item label="Company 2" value="key1" />
+            </Picker>
+          </View>
+        </Content>
       <Footer>
         <FooterTab>
           <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>

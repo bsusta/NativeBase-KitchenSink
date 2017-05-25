@@ -2,14 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Tab, Tabs, Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
+import { Tab, Tabs,Input, Picker, Item, Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
 import { Actions } from 'react-native-router-flux';
-import TabAtributes from './tabAtributes';
-import TabComments from './tabComments';
-import TabItems from './tabItems';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
 import styles from './styles';
+import TabComment from './tabComment';
+import TabEmail from './tabEmail';
 
 const {
   pushRoute,
@@ -17,7 +16,7 @@ const {
 const datas = [
 ];
 
-class TaskEdit extends Component {
+class AddComment extends Component {
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
@@ -31,31 +30,34 @@ class TaskEdit extends Component {
     this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedItem: undefined,
+      selected1: 'key0',
+      results: {
+        items: []
+      },
+    };
+  }
+  onValueChange(value: string) {
+    this.setState({
+      selected1: value
+    });
+  }
+
+
   render() {
     return (
       <Container style={styles.container}>
-        <Header>
-          <Left>
-          <Button transparent onPress={() => Actions.pop()}>
-            <Icon name="arrow-back" />
-          </Button>
-          </Left>
-          <Body>
-            <Title>Add/Edit task</Title>
-          </Body>
-          <Right />
-        </Header>
-           <Tabs>
-               <Tab heading="Attributes">
-                   <TabAtributes />
-               </Tab>
-               <Tab heading="Comments">
-                   <TabComments />
-               </Tab>
-               <Tab heading="Items">
-                   <TabItems />
-               </Tab>
-           </Tabs>
+        <Tabs>
+            <Tab heading="+ Comment">
+                <TabComment />
+            </Tab>
+            <Tab heading="+ Email">
+                <TabEmail />
+            </Tab>
+        </Tabs>
       </Container>
     );
   }
@@ -74,4 +76,4 @@ const mapStateToProps = state => ({
   themeState: state.drawer.themeState,
 });
 
-export default connect(mapStateToProps, bindAction)(TaskEdit);
+export default connect(mapStateToProps, bindAction)(AddComment);

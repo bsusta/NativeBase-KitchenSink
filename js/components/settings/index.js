@@ -90,6 +90,16 @@ class Settings extends Component {
         </Content>
         <Footer>
           <FooterTab>
+            <Button onPress={Actions.addCompany} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+              <Icon active style={{ color: 'white' }} name="add" />
+              <Text style={{ color: 'white' }} >Company</Text>
+            </Button>
+          </FooterTab>
+          <FooterTab>
+            <Button onPress={Actions.addCompany} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+              <Icon active style={{ color: 'white' }} name="add" />
+              <Text style={{ color: 'white' }} >User</Text>
+            </Button>
           </FooterTab>
         </Footer>
       </Container>

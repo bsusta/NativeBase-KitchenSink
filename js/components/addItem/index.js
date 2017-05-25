@@ -14,7 +14,7 @@ const {
 const datas = [
 ];
 
-class AddCompany extends Component {
+class AddItem extends Component {
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
@@ -44,6 +44,7 @@ class AddCompany extends Component {
     });
   }
 
+
   render() {
     return (
       <Container style={styles.container}>
@@ -54,22 +55,35 @@ class AddCompany extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Add/Edit company</Title>
+            <Title>Add/Edit item</Title>
           </Body>
         </Header>
         <Content style={{ padding: 15 }}>
-          <Text note>Company name</Text>
+          <Text note>Name</Text>
           <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
             <Input />
           </View>
-          <Text note>Street</Text>
+          <Text note>Price/unit</Text>
           <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
             <Input />
           </View>
-          <Text note>City</Text>
+          <Text note>Unit</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Picker
+              supportedOrientations={['portrait', 'landscape']}
+              iosHeader="Select one"
+              mode="dropdown"
+              selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)}>
+              <Item label="ks" value="key0" />
+              <Item label="th" value="key1" />
+            </Picker>
+          </View>
+          <Text note>Quantity</Text>
           <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
             <Input />
           </View>
+
         </Content>
         <Footer>
           <FooterTab>
@@ -103,4 +117,4 @@ const mapStateToProps = state => ({
   themeState: state.drawer.themeState,
 });
 
-export default connect(mapStateToProps, bindAction)(AddCompany);
+export default connect(mapStateToProps, bindAction)(AddItem);

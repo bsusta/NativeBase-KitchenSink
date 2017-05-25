@@ -109,6 +109,8 @@ import CompaniesList from './components/companiesList/';
 import UsersList from './components/usersList/';
 import AddUser from './components/addUser/';
 import AddCompany from './components/addCompany/';
+import AddItem from './components/addItem/';
+import AddComment from './components/addComment/';
 
 const {
   popRoute,
@@ -196,7 +198,8 @@ class AppNavigator extends Component {
               <Scene key="usersList" component={UsersList} />
               <Scene key="addUser" component={AddUser} />
               <Scene key="addCompany" component={AddCompany} />
-
+              <Scene key="addItem" component={AddItem} />
+              <Scene key="addComment" component={AddComment} />
 
 
               <Scene key="header" component={Header} />

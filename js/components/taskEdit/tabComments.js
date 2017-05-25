@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 import { Input, Label, Button, Icon, Item, Footer, FooterTab, Thumbnail, Container, Content, Card, CardItem, Text, ListItem, List,  Left, Body, Right } from 'native-base';
-
+import { Actions } from 'react-native-router-flux';
 import styles from './styles';
 
 export default class TabComments extends Component { // eslint-disable-line
@@ -54,7 +54,7 @@ export default class TabComments extends Component { // eslint-disable-line
 
       <Footer>
         <FooterTab>
-          <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+          <Button onPress={Actions.addComment} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
             <Icon active style={{ color: 'white' }} name="md-add" />
             <Text style={{ color: 'white' }} >Comment</Text>
           </Button>

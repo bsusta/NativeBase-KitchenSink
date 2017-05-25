@@ -28,6 +28,21 @@ class AddUser extends Component {
     this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedItem: undefined,
+      selected1: 'key0',
+      results: {
+        items: []
+      },
+    };
+  }
+  onValueChange(value: string) {
+    this.setState({
+      selected1: value
+    });
+  }
 
   render() {
     return (
@@ -42,8 +57,31 @@ class AddUser extends Component {
             <Title>Add/Edit user</Title>
           </Body>
         </Header>
-        <Content>
-
+        <Content style={{ padding: 15 }}>
+          <Text note>Name</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Input />
+          </View>
+          <Text note>Surname</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Input />
+          </View>
+          <Text note>Email</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Input />
+          </View>
+          <Text note>Company</Text>
+          <View style={{ borderColor: '#CCCCCC', borderWidth: 0.5, marginBottom: 15 }}>
+            <Picker
+              supportedOrientations={['portrait', 'landscape']}
+              iosHeader="Select one"
+              mode="dropdown"
+              selectedValue={this.state.selected1}
+              onValueChange={this.onValueChange.bind(this)}>
+              <Item label="Company 1" value="key0" />
+              <Item label="Company 2" value="key1" />
+            </Picker>
+          </View>
         </Content>
         <Footer>
           <FooterTab>

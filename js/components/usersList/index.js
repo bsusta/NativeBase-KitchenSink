@@ -43,7 +43,24 @@ class usersList extends Component {
           </Body>
         </Header>
         <Content>
-
+          <List>
+                  <ListItem >
+                    <Body>
+                      <Text>User 1</Text>
+                    </Body>
+                    <Right>
+                      <Icon name="arrow-forward" />
+                    </Right>
+                  </ListItem>
+                  <ListItem>
+                    <Body>
+                      <Text>User 2</Text>
+                    </Body>
+                    <Right>
+                      <Icon name="arrow-forward" />
+                    </Right>
+                  </ListItem>
+              </List>
         </Content>
         <Footer>
           <FooterTab>
