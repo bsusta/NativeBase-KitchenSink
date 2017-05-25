@@ -17,7 +17,6 @@ import Search from './components/search/';
 import Settings from './components/settings/';
 import Messages from './components/messages/';
 import AddFolder from './components/addFolder/';
-import AddTask from './components/addTask/';
 import CompaniesList from './components/companiesList/';
 import UsersList from './components/usersList/';
 import AddUser from './components/addUser/';
@@ -103,7 +102,6 @@ class AppNavigator extends Component {
               <Scene key="messages" component={Messages} />
               <Scene key="settings" component={Settings} />
               <Scene key="addFolder" component={AddFolder} />
-              <Scene key="addTask" component={AddTask} />
               <Scene key="companiesList" component={CompaniesList} />
               <Scene key="usersList" component={UsersList} />
               <Scene key="addUser" component={AddUser} />

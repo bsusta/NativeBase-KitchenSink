@@ -104,7 +104,7 @@ export default {
 
 
       // Color
-  brandPrimary: (platform === 'ios') ? '#007aff' : '#3F51B5',
+  brandPrimary: (platform === 'ios') ? '#007aff' : '#1976d2',
   brandInfo: '#62B1F6',
   brandSuccess: '#5cb85c',
   brandDanger: '#d9534f',
@@ -141,7 +141,7 @@ export default {
   tabActiveBgColor: (platform === 'ios') ? '#cde1f9' : undefined,
 
     // Tab
-  tabDefaultBg: (platform === 'ios') ? '#F8F8F8' : '#3F51B5',
+  tabDefaultBg: (platform === 'ios') ? '#F8F8F8' : '#1976d2',
   topTabBarTextColor: (platform === 'ios') ? '#6b6b6b' : '#b3c7f9',
   topTabBarActiveTextColor: (platform === 'ios') ? '#007aff' : '#fff',
   topTabActiveBgColor: (platform === 'ios') ? '#cde1f9' : undefined,
@@ -150,7 +150,7 @@ export default {
 
     // Header
   toolbarBtnColor: (platform === 'ios') ? '#007aff' : '#fff',
-  toolbarDefaultBg: (platform === 'ios') ? '#F8F8F8' : '#3F51B5',
+  toolbarDefaultBg: (platform === 'ios') ? '#F8F8F8' : '#1976d2',
   toolbarHeight: (platform === 'ios') ? 64 : 56,
   toolbarIconSize: (platform === 'ios') ? 20 : 22,
   toolbarSearchIconSize: (platform === 'ios') ? 20 : 23,
@@ -158,7 +158,7 @@ export default {
   searchBarHeight: (platform === 'ios') ? 30 : 40,
   toolbarInverseBg: '#222',
   toolbarTextColor: (platform === 'ios') ? '#000' : '#fff',
-  toolbarDefaultBorder: (platform === 'ios') ? '#a7a6ab' : '#3F51B5',
+  toolbarDefaultBorder: (platform === 'ios') ? '#a7a6ab' : '#1976d2',
   get statusBarColor() {
     return color(this.toolbarDefaultBg).darken(0.2).hexString();
   },
