@@ -14,4 +14,8 @@ export default {
   mb: {
     marginBottom: 15,
   },
+  paddingSide: {
+    paddingLeft: 10,
+    paddingRight: 10,
+  },
 };

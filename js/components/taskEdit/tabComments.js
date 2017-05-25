@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 
-import { Container, Content, Card, CardItem, Text, Body } from 'native-base';
+import { Input, Label, Button, Icon, Item, Footer, FooterTab, Thumbnail, Container, Content, Card, CardItem, Text, ListItem, List,  Left, Body, Right } from 'native-base';
 
 import styles from './styles';
 
@@ -9,29 +9,60 @@ export default class TabComments extends Component { // eslint-disable-line
 
   render() { // eslint-disable-line
     return (
-      <Content padder style={{ marginTop: 0 }}>
-        <Card style={{ flex: 0 }}>
-          <CardItem>
-            <Body>
-              <Text>
-                NativeBase is a free and open source framework that enables
-                developers to build high-quality mobile apps using React Native
-                iOS and Android apps with a fusion of ES6.
-              </Text>
-            </Body>
-          </CardItem>
-        </Card>
-        <Card style={{ flex: 0 }}>
-          <CardItem>
-            <Body>
-              <Text>
-                NativeBase gives you the potential of building applications
-                that run on iOS and Android using a single codebase.
-              </Text>
-            </Body>
-          </CardItem>
-        </Card>
+      <Container>
+        <Content padder style={{ marginTop: 0 }}>
+          <List>
+          <ListItem avatar>
+                  <Left>
+                     <Thumbnail/>
+                 </Left>
+                 <Body>
+                     <Text note>Kumar Pratik</Text>
+                     <Text>Doing what you like will always keep you happy . .</Text>
+                 </Body>
+                 <Right>
+                     <Text note>3:43 pm 12.2.2017</Text>
+                 </Right>
+             </ListItem>
+             <ListItem avatar>
+                     <Left>
+                        <Thumbnail/>
+                    </Left>
+                    <Body>
+                        <Text note>Kumar Pratik posted a reply</Text>
+                        <Text>Doing what you like will always keep you happy . .</Text>
+                    </Body>
+                    <Right>
+                        <Text note>3:43 pm 12.2.2017</Text>
+                    </Right>
+                </ListItem>
+                <ListItem avatar>
+                        <Left>
+                           <Thumbnail/>
+                       </Left>
+                       <Body>
+                           <Text note>FROM:branislav.susta@gmail.com</Text>
+                           <Text note>TO:hotline@lansystems.sk</Text>
+                           <Text>Doing what you like will always keep you happy . .</Text>
+                       </Body>
+                       <Right>
+                           <Text note>3:43 pm 12.2.2017</Text>
+                       </Right>
+                   </ListItem>
+        </List>
       </Content>
+
+      <Footer>
+        <FooterTab>
+          <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+            <Icon active style={{ color: 'white' }} name="md-add" />
+            <Text style={{ color: 'white' }} >Comment</Text>
+          </Button>
+        </FooterTab>
+      </Footer>
+
+    </Container>
+
     );
   }
 }

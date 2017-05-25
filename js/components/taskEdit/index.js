@@ -36,9 +36,9 @@ class TaskEdit extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={this.props.openDrawer}>
-              <Icon name="menu" />
-            </Button>
+          <Button transparent onPress={() => Actions.pop()}>
+            <Icon name="arrow-back" />
+          </Button>
           </Left>
           <Body>
             <Title>Task name</Title>

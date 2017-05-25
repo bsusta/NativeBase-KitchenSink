@@ -117,8 +117,6 @@ export default class TabAtributes extends Component { // eslint-disable-line
 
 
     </Content>
-
-
       <Footer>
         <FooterTab>
           <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
@@ -133,8 +131,7 @@ export default class TabAtributes extends Component { // eslint-disable-line
             <Text style={{ color: 'white' }} >Save</Text>
           </Button>
         </FooterTab>
-      </Footer>
-
+    </Footer>
     </Container>
 
 
