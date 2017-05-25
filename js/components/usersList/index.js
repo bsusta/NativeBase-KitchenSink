@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
+import { Input, Picker, Item, Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
@@ -12,17 +12,9 @@ const {
   pushRoute,
 } = actions;
 const datas = [
-  {
-    route: 'taskEdit',
-    text: 'Task name 1',
-  },
-  {
-    route: 'taskEdit',
-    text: 'Task name 2',
-  },
 ];
 
-class Settings extends Component {
+class usersList extends Component {
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
@@ -36,6 +28,7 @@ class Settings extends Component {
     this.props.pushRoute({ key: route, index: 1 }, this.props.navigation.key);
   }
 
+
   render() {
     return (
       <Container style={styles.container}>
@@ -46,50 +39,18 @@ class Settings extends Component {
             </Button>
           </Left>
           <Body>
-            <Title>Settings</Title>
+            <Title>Users list</Title>
           </Body>
-          <Right>
-         </Right>
         </Header>
         <Content>
-          <ListItem button onPress={Actions.usersList} icon>
-            <Left>
-              <Icon name="person" />
-            </Left>
-            <Body>
-              <Text>Users</Text>
-            </Body>
-            <Right>
-              <Icon name="arrow-forward" />
-            </Right>
-          </ListItem>
-          <ListItem button onPress={Actions.companiesList} icon>
-            <Left>
-              <Icon name="people" />
-            </Left>
-            <Body>
-              <Text>Companies</Text>
-            </Body>
-            <Right>
-              <Icon name="arrow-forward" />
-            </Right>
-          </ListItem>
-          <ListItem icon>
-            <Left>
-              <Icon name="exit" />
-            </Left>
-            <Body>
-              <Text>
-                Log out
-              </Text>
-            </Body>
-            <Right>
-              <Icon name="arrow-forward" />
-            </Right>
-          </ListItem>
+
         </Content>
         <Footer>
           <FooterTab>
+            <Button onPress={Actions.addUser} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+              <Icon active style={{ color: 'white' }} name="add" />
+              <Text style={{ color: 'white' }} >User</Text>
+            </Button>
           </FooterTab>
         </Footer>
       </Container>
@@ -110,4 +71,4 @@ const mapStateToProps = state => ({
   themeState: state.drawer.themeState,
 });
 
-export default connect(mapStateToProps, bindAction)(Settings);
+export default connect(mapStateToProps, bindAction)(usersList);

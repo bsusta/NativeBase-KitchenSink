@@ -64,7 +64,7 @@ class TaskList extends Component {
         </Header>
 
         <Content>
-          <List dataArray={datas} renderRow={data =>
+          <List  bordered dataArray={datas} renderRow={data =>
             <ListItem button onPress={() => { Actions[data.route](); this.props.closeDrawer() }} >
               <Body>
                 <Text>{data.text}</Text>
@@ -84,14 +84,14 @@ class TaskList extends Component {
 
         <Footer>
           <FooterTab>
-            <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+            <Button onPress={Actions.addFolder} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
               <Icon active style={{ color: 'white' }} name="md-add" />
               <Text style={{ color: 'white' }} >Folder</Text>
             </Button>
           </FooterTab>
 
           <FooterTab>
-            <Button iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+            <Button onPress={Actions.addTask} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
               <Icon active name="md-add" style={{ color: 'white' }} />
               <Text style={{ color: 'white' }} >Task</Text>
             </Button>
