@@ -2,11 +2,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { actions } from 'react-native-navigation-redux-helpers';
-import { Input, Picker, Item, Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
+import { Tab, Tabs, Input, Picker, Item, Footer, FooterTab, Container, Header, Title, Content, Button, Icon, Text, Left, Right, Body, List, ListItem, View } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
 import styles from './styles';
+import TabDescription from './tabDescription';
+import TabACL from './tabACL';
 
 const {
   pushRoute,
@@ -57,8 +59,16 @@ onValueChange (value: string) {
             <Title>Add Folder</Title>
           </Body>
         </Header>
-        <Content>
-        </Content>
+
+          <Tabs>
+              <Tab heading="Description">
+                  <TabDescription />
+              </Tab>
+              <Tab heading="ACL">
+                  <TabACL />
+              </Tab>
+          </Tabs>
+
       </Container>
     );
   }
