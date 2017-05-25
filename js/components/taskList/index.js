@@ -91,7 +91,7 @@ class TaskList extends Component {
           </FooterTab>
 
           <FooterTab>
-            <Button onPress={Actions.addTask} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
+            <Button onPress={Actions.taskEdit} iconLeft style={{ flexDirection: 'row', borderColor: 'white', borderWidth: 0.5 }}>
               <Icon active name="md-add" style={{ color: 'white' }} />
               <Text style={{ color: 'white' }} >Task</Text>
             </Button>
